@@ -1,9 +1,9 @@
 // College 
 // GET APIs :
-// 1. get all colleges
-// 2. get specific college
-// 3. get specific colleges based on department
-// 4. get specific colleges based on course
+// 1. get all colleges [Done]
+// 2. get specific college [Done]
+// 3. get specific colleges based on department [Done]
+// 4. get specific colleges based on course [Done]
 
 // POST API:
 // 1. Add new college
