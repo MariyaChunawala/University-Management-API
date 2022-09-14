@@ -7,7 +7,7 @@ const CollegeModel = require("./Database/college");
 
 /*
     Routes : /
-    d]Description : To get all colleges
+    Description : To get all colleges
     Parameter : NONE
     Method : GET
 */
@@ -18,7 +18,7 @@ app.get("/", async (request, response) =>{
 
 /*
     Routes : /
-    d]Description : To get specific college
+    Description : To get specific college
     Parameter : id
     Method : GET
 */
@@ -34,7 +34,7 @@ app.get("/:id", async (request, response) =>{
 
 /*
     Routes : /deparment
-    d]Description : To get specific colleges based on department
+    Description : To get specific colleges based on department
     Parameter : deparment
     Method : GET
 */
@@ -50,7 +50,7 @@ app.get("/deparment/:department", async (request, response) =>{
 
 /*
     Routes : /course
-    d]Description : To get specific colleges based on course
+    Description : To get specific colleges based on course
     Parameter : course
     Method : GET
 */
@@ -62,6 +62,17 @@ app.get("/course/:course", async (request, response) =>{
         return response.json({Colleges : `No Specific college find with course ${request.params.course}`});
     }
     return response.json({Colleges : colleges});
+});
+
+/*
+    Routes : /post
+    Description : Add new college
+    Parameter : NONE
+    Method : POST
+*/
+app.post("/post", async (request, response) =>{
+    const addCollege = await CollegeModel.create(request.body.newCollege);
+    return response.json({Colleges : addCollege});
 });
 
 module.exports = app;
