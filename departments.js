@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express.Router();
 
+// Models
 const DepartmentModel = require('./Database/department');
+const CourseModel = require('./Database/course');
 
 /* 
     Route : /
@@ -55,6 +57,44 @@ app.get("/course/:id", async (request, response) =>{
 app.post("/post", async (request, response) =>{
     const addNewDepartment = await DepartmentModel.create(request.body.newDepartment)
     return response.json({Departments : addNewDepartment});
+});
+
+/* 
+    Route : /update
+    Description : update Department name
+    Parameters : id
+    Method : PUT
+*/
+app.put("/update/:id", async (request, response) =>{
+    const updatedDepartment = await DepartmentModel.findOneAndUpdate(
+        {id : parseInt(request.params.id)},
+        {name : request.body.newDepartmentName},
+        {new : true}
+    )
+    return response.json({Departments : updatedDepartment});
+});
+
+/* 
+    Route : /update/course
+    Description : update or add new course
+    Parameters : department_id
+    Method : PUT
+*/
+app.put("/update/course/:department_id", async (request, response) =>{
+    // update department Database
+    const updatedDepartment = await DepartmentModel.findOneAndUpdate(
+        {id : parseInt(request.params.department_id)},
+        {$addToSet : {courses : request.body.newCourse}},
+        {new : true}
+    )
+
+    // update Course Database
+    const updatedCourse = await CourseModel.findOneAndUpdate(
+        {id : request.body.newCourse},
+        {department_id : parseInt(request.params.department_id)},
+        {new : true}
+    );
+    return response.json({Departments : updatedDepartment, Courses : updatedCourse});
 });
 
 module.exports = app;

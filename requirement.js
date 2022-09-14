@@ -25,8 +25,8 @@
 // 1. Add new department [Done]
 // 
 // PUT APIs :
-// 1. update Department name
-// 2. update or add new course
+// 1. update Department name [Done]
+// 2. update or add new course [Done]
 // 
 // DELETE APIs:
 // 1. Delete a department
