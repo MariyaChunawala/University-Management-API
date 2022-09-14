@@ -13,8 +13,10 @@ mongoose.connect(process.env.MONGO_URL).then(()=> console.log('connection establ
 // APIs Routes
 const colleges = require("./colleges");
 const departments = require("./departments");
+const courses = require("./courses")
 
 app.use("/colleges", colleges);
 app.use("/departments", departments);
+app.use("/courses", courses);
 
 app.listen(3000, ()=> console.log("Server start"));

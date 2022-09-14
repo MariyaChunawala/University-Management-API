@@ -31,3 +31,18 @@
 // DELETE APIs:
 // 1. Delete a department [Done]
 // 2. Delete a course from department [Done]
+
+// Course
+// GET APIs:
+// 1. get all courses [Done]
+// 2. get specific course [Done]
+// 3. get specific course based on Department [Done]
+// 
+// POST APIs:
+// 1. add new course [Done]
+// 
+// PUT APIs:
+// 1. update course name [Done]
+// 
+// DELETE APIs:
+// 1. Delete a course [Done]
