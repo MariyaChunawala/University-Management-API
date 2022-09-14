@@ -13,6 +13,5 @@
 // 2. Update or add new department [Done] 
 
 // DELETE APIs:
-// 1. Delete a college
-// 2. Delete a department from a college
-// 3. Delete a course from a college
+// 1. Delete a college [Done]
+// 2. Delete a department from a college [Done]

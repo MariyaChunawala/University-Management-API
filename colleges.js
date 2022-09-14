@@ -5,7 +5,6 @@ const app = express.Router();
 // Models
 const CollegeModel = require("./Database/college");
 const DepartmentModel = require("./Database/department");
-const CourseModel = require("./Database/course");
 
 /*
     Routes : /
@@ -115,6 +114,44 @@ app.put("/update/department/:college_id", async (request, response) =>{
     );
 
     return response.json({Colleges : updatedColleges, Department : updatedDepartment});
+});
+
+/*
+    Routes : /delete
+    Description : Delete a college
+    Parameter : id
+    Method : DELETE
+*/
+app.delete("/delete/:id", async (request, response) =>{
+    const updatedColleges = await CollegeModel.findOneAndDelete(
+        {id : parseInt(request.params.id)},
+    );
+
+    return response.json({Colleges : updatedColleges});
+});
+
+/*
+    Routes : /delete/department
+    Description : Delete a college
+    Parameter : college_id
+    Method : DELETE
+*/
+app.delete("/delete/department/:college_id", async (request, response) =>{
+    // Update College Database
+    const updatedColleges = await CollegeModel.findOneAndUpdate(
+        {id : parseInt(request.params.college_id)},
+        {$pull : {dep_name : request.body.department}},
+        {new : true}
+    );
+
+    // Update Department Database
+    const updatedDepartment = await DepartmentModel.findOneAndUpdate(
+        {name : request.body.department},
+        {$pull : {colleges_id : parseInt(request.params.college_id)}},
+        {new : true}
+    );
+
+    return response.json({Colleges : updatedColleges, Departments : updatedDepartment});
 });
 
 module.exports = app;
