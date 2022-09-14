@@ -29,5 +29,5 @@
 // 2. update or add new course [Done]
 // 
 // DELETE APIs:
-// 1. Delete a department
-// 2. Delete a course from department
+// 1. Delete a department [Done]
+// 2. Delete a course from department [Done]

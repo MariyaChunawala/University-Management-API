@@ -97,4 +97,40 @@ app.put("/update/course/:department_id", async (request, response) =>{
     return response.json({Departments : updatedDepartment, Courses : updatedCourse});
 });
 
+/* 
+    Route : /delete
+    Description : Delete a department
+    Parameters : id
+    Method : DELETE
+*/
+app.delete("/delete/:id", async (request, response) =>{
+    const updatedDepartment = await DepartmentModel.findOneAndDelete(
+        {id : parseInt(request.params.id)}
+    );
+    return response.json({Departments : updatedDepartment});
+});
+
+/* 
+    Route : /delete/course
+    Description : Delete a course from department
+    Parameters : department_id
+    Method : DELETE
+*/
+app.delete("/delete/course/:department_id", async (request, response) =>{
+    // update department Database
+    const updatedDepartment = await DepartmentModel.findOneAndUpdate(
+        {id : parseInt(request.params.department_id)},
+        {$pull : {courses : request.body.course}},
+        {new : true}
+    )
+
+    // update Course Database
+    const updatedCourse = await CourseModel.findOneAndUpdate(
+        {id : request.body.course},
+        {department_id : 0},
+        {new : true}
+    );
+    return response.json({Departments : updatedDepartment, Courses : updatedCourse});
+});
+
 module.exports = app;
