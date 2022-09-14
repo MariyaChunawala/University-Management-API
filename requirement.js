@@ -17,13 +17,12 @@
 
 // Department
 // GET APIs:
-// 1. get all Department
-// 2. get specific department
-// 3. get specific department based on college
-// 4. get specific department based on course
+// 1. get all Department [Done]
+// 2. get specific department [Done] 
+// 3. get specific department based on course [Done]
 // 
 // POST APIs:
-// 1. Add new department
+// 1. Add new department [Done]
 // 
 // PUT APIs :
 // 1. update Department name
