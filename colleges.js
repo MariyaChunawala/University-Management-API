@@ -13,8 +13,8 @@ const DepartmentModel = require("./Database/department");
     Method : GET
 */
 app.get("/", async (request, response) =>{
-    const colleges = await CollegeModel.find();
-    return response.json({Colleges : colleges});
+    const getAllColleges = await CollegeModel.find();
+    return response.json({Colleges : getAllColleges});
 });
 
 /*
@@ -24,45 +24,29 @@ app.get("/", async (request, response) =>{
     Method : GET
 */
 app.get("/:id", async (request, response) =>{
-    const colleges = await CollegeModel.findOne(
+    const getSpecificColleges = await CollegeModel.findOne(
         {id : parseInt(request.params.id)}
     );
-    if(!colleges){
-        return response.json({Colleges : `No Specific college find with id ${request.params.id}`});
+    if(!getSpecificColleges){
+        return response.json({error : `No Specific college find with id ${request.params.id}`});
     }
-    return response.json({Colleges : colleges});
+    return response.json({Colleges : getSpecificColleges});
 });
 
 /*
-    Routes : /deparment
+    Routes : /department
     Description : To get specific colleges based on department
     Parameter : deparment
     Method : GET
 */
-app.get("/deparment/:department", async (request, response) =>{
-    const colleges = await CollegeModel.find(
+app.get("/department/:department", async (request, response) =>{
+    const getSpecificColleges = await CollegeModel.find(
         {dep_name : request.params.department}
     );
-    if(!colleges){
-        return response.json({Colleges : `No Specific college find with department ${request.params.department}`});
+    if(getSpecificColleges.length === 0){
+        return response.json({error : `No Specific college find with department ${request.params.department}`});
     }
-    return response.json({Colleges : colleges});
-});
-
-/*
-    Routes : /course
-    Description : To get specific colleges based on course
-    Parameter : course
-    Method : GET
-*/
-app.get("/course/:course", async (request, response) =>{
-    const colleges = await CollegeModel.find(
-        {courses : request.params.course}
-    );
-    if(!colleges){
-        return response.json({Colleges : `No Specific college find with course ${request.params.course}`});
-    }
-    return response.json({Colleges : colleges});
+    return response.json({Colleges : getSpecificColleges});
 });
 
 /*
@@ -72,8 +56,8 @@ app.get("/course/:course", async (request, response) =>{
     Method : POST
 */
 app.post("/post", async (request, response) =>{
-    const addCollege = await CollegeModel.create(request.body.newCollege);
-    return response.json({Colleges : addCollege});
+    const addNewCollege = await CollegeModel.create(request.body.newCollege);
+    return response.json({Colleges : addNewCollege});
 });
 
 /*
@@ -85,7 +69,7 @@ app.post("/post", async (request, response) =>{
 app.patch("/update/:id", async (request, response) =>{
     const updatedColleges = await CollegeModel.findOneAndUpdate(
         {id : parseInt(request.params.id)},
-        {name : request.body.newName},
+        {name : request.body.newCollegeName},
         {new : true}
     );
 
@@ -107,13 +91,13 @@ app.put("/update/department/:college_id", async (request, response) =>{
     );
 
     // Update Department Database
-    const updatedDepartment = await DepartmentModel.findOneAndUpdate(
+    const updatedDepartments = await DepartmentModel.findOneAndUpdate(
         {name : request.body.newDepartment},
         {$addToSet : {colleges_id : request.params.college_id}},
         {new : true}
     );
 
-    return response.json({Colleges : updatedColleges, Department : updatedDepartment});
+    return response.json({Colleges : updatedColleges, Department : updatedDepartments});
 });
 
 /*
@@ -132,7 +116,7 @@ app.delete("/delete/:id", async (request, response) =>{
 
 /*
     Routes : /delete/department
-    Description : Delete a college
+    Description : Delete a department from a college
     Parameter : college_id
     Method : DELETE
 */
