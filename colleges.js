@@ -2,8 +2,10 @@
 const express = require('express');
 const app = express.Router();
 
-
+// Models
 const CollegeModel = require("./Database/college");
+const DepartmentModel = require("./Database/department");
+const CourseModel = require("./Database/course");
 
 /*
     Routes : /
@@ -73,6 +75,46 @@ app.get("/course/:course", async (request, response) =>{
 app.post("/post", async (request, response) =>{
     const addCollege = await CollegeModel.create(request.body.newCollege);
     return response.json({Colleges : addCollege});
+});
+
+/*
+    Routes : /update
+    Description : update college name
+    Parameter : id
+    Method : PATCH
+*/
+app.patch("/update/:id", async (request, response) =>{
+    const updatedColleges = await CollegeModel.findOneAndUpdate(
+        {id : parseInt(request.params.id)},
+        {name : request.body.newName},
+        {new : true}
+    );
+
+    return response.json({Colleges : updatedColleges});
+});
+
+/*
+    Routes : /update/department
+    Description : Update or add new department
+    Parameter : college_id
+    Method : PUT
+*/
+app.put("/update/department/:college_id", async (request, response) =>{
+    // Update college Database
+    const updatedColleges = await CollegeModel.findOneAndUpdate(
+        {id : parseInt(request.params.college_id)},
+        {$addToSet : {dep_name : request.body.newDepartment}},
+        {new : true}
+    );
+
+    // Update Department Database
+    const updatedDepartment = await DepartmentModel.findOneAndUpdate(
+        {name : request.body.newDepartment},
+        {$addToSet : {colleges_id : request.params.college_id}},
+        {new : true}
+    );
+
+    return response.json({Colleges : updatedColleges, Department : updatedDepartment});
 });
 
 module.exports = app;

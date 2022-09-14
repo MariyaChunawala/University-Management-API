@@ -6,12 +6,11 @@
 // 4. get specific colleges based on course [Done]
 
 // POST API:
-// 1. Add new college
+// 1. Add new college [Done]
 
 // PUT APIs:
-// 1. update college name
-// 2. Update or add new department
-// 3. Update or add new course
+// 1. update college name [Done]
+// 2. Update or add new department [Done] 
 
 // DELETE APIs:
 // 1. Delete a college

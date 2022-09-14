@@ -5,7 +5,6 @@ const collegeScheme = mongoose.Schema({
     name : String,
     dep_name : [String],
     instructors : Number,
-    courses : [Number]
 });
 
 const CollegeModel = mongoose.model("colleges", collegeScheme);
