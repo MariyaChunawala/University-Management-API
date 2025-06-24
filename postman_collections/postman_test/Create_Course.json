@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Computer Science",
+    "code": "CS101",
+    "collegeId": 1001,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  },
+  {
+    "name": "Electrical Engineering",
+    "code": "EE202",
+    "collegeId": 1002,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  },
+  {
+    "name": "Business Administration",
+    "code": "BA305",
+    "collegeId": 1003,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  },
+  {
+    "name": "Psychology",
+    "code": "PSY404",
+    "collegeId": 1004,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  },
+  {
+    "name": "Mathematics",
+    "code": "MATH505",
+    "collegeId": 1005,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  }
+]
