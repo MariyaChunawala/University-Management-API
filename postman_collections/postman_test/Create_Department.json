@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Computer Science",
+    "head": "Dr. James Wilson",
+    "collegeId": 1001,
+    "statusCode": 200,
+    "scenario": "Success - Department Created"
+  },
+  {
+    "name": "Electrical Engineering",
+    "head": "Prof. Sarah Johnson",
+    "collegeId": 1002,
+    "statusCode": 200,
+    "scenario": "Success - Department Created"
+  },
+  {
+    "name": "Mechanical Engineering",
+    "head": "Dr. Robert Chen",
+    "collegeId": 1003,
+    "statusCode": 200,
+    "scenario": "Success - Department Created"
+  },
+  {
+    "name": "Business Administration",
+    "head": "Prof. Emily Rodriguez",
+    "collegeId": 1004,
+    "statusCode": 200,
+    "scenario": "Success - Department Created"
+  },
+  {
+    "name": "Mathematics",
+    "head": "Dr. Michael Thompson",
+    "collegeId": 1005,
+    "statusCode": 200,
+    "scenario": "Success - Department Created"
+  }
+]

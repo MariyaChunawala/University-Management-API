@@ -1,0 +1,47 @@
+[
+  {
+    "newCollege": {
+      "name": "Harvard University",
+      "location": "Cambridge, Massachusetts",
+      "established": 1636
+    },
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  },
+  {
+    "newCollege": {
+      "name": "Stanford University",
+      "location": "Stanford, California",
+      "established": 1885
+    },
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  },
+  {
+    "newCollege": {
+      "name": "Massachusetts Institute of Technology",
+      "location": "Cambridge, Massachusetts",
+      "established": 1861
+    },
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  },
+  {
+    "newCollege": {
+      "name": "University of California, Berkeley",
+      "location": "Berkeley, California",
+      "established": 1868
+    },
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  },
+  {
+    "newCollege": {
+      "name": "Princeton University",
+      "location": "Princeton, New Jersey",
+      "established": 1746
+    },
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  }
+]
