@@ -1,0 +1,27 @@
+[
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Departments",
+    "responseBody": "[{\"_id\":\"6543210abcdef01234567890\",\"name\":\"Computer Science\",\"head\":\"Dr. John Smith\",\"collegeId\":\"5432109abcdef01234567890\"},{\"_id\":\"6543210abcdef01234567891\",\"name\":\"Electrical Engineering\",\"head\":\"Dr. Sarah Johnson\",\"collegeId\":\"5432109abcdef01234567890\"}]"
+  },
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Departments",
+    "responseBody": "[{\"_id\":\"6543210abcdef01234567892\",\"name\":\"Mechanical Engineering\",\"head\":\"Dr. Robert Brown\",\"collegeId\":\"5432109abcdef01234567891\"},{\"_id\":\"6543210abcdef01234567893\",\"name\":\"Physics\",\"head\":\"Dr. Emily Chen\",\"collegeId\":\"5432109abcdef01234567891\"}]"
+  },
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Departments",
+    "responseBody": "[{\"_id\":\"6543210abcdef01234567894\",\"name\":\"Mathematics\",\"head\":\"Dr. Michael Wilson\",\"collegeId\":\"5432109abcdef01234567892\"},{\"_id\":\"6543210abcdef01234567895\",\"name\":\"Chemistry\",\"head\":\"Dr. Lisa Taylor\",\"collegeId\":\"5432109abcdef01234567892\"}]"
+  },
+  {
+    "statusCode": 404,
+    "scenario": "Not Found - No Departments Available",
+    "responseBody": "[]"
+  },
+  {
+    "statusCode": 500,
+    "scenario": "Internal Server Error",
+    "responseBody": "{\"error\":\"Database connection failed\",\"message\":\"Unable to retrieve departments\"}"
+  }
+]

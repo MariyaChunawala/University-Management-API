@@ -1,0 +1,27 @@
+[
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Courses",
+    "responseBody": "[{\"_id\":\"6123e8f92a7c3e001f8d9a1b\",\"name\":\"Computer Science\",\"code\":\"CS101\",\"collegeId\":\"5f8a7b6c4d3e2a1b0c9d8e7f\"},{\"_id\":\"6123e8f92a7c3e001f8d9a2c\",\"name\":\"Mathematics\",\"code\":\"MATH202\",\"collegeId\":\"5f8a7b6c4d3e2a1b0c9d8e7f\"}]"
+  },
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Courses",
+    "responseBody": "[{\"_id\":\"6123e8f92a7c3e001f8d9a3d\",\"name\":\"Physics\",\"code\":\"PHYS303\",\"collegeId\":\"5f8a7b6c4d3e2a1b0c9d8e8a\"},{\"_id\":\"6123e8f92a7c3e001f8d9a4e\",\"name\":\"Chemistry\",\"code\":\"CHEM404\",\"collegeId\":\"5f8a7b6c4d3e2a1b0c9d8e8a\"}]"
+  },
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Courses",
+    "responseBody": "[{\"_id\":\"6123e8f92a7c3e001f8d9a5f\",\"name\":\"Biology\",\"code\":\"BIO505\",\"collegeId\":\"5f8a7b6c4d3e2a1b0c9d8e9b\"},{\"_id\":\"6123e8f92a7c3e001f8d9a6g\",\"name\":\"English Literature\",\"code\":\"ENG606\",\"collegeId\":\"5f8a7b6c4d3e2a1b0c9d8e9b\"}]"
+  },
+  {
+    "statusCode": 404,
+    "scenario": "Not Found - No Courses Available",
+    "responseBody": "[{\"_id\":123,\"name\":456,\"code\":true,\"collegeId\":null},{\"_id\":\"\",\"name\":[],\"code\":{},\"collegeId\":false}]"
+  },
+  {
+    "statusCode": 500,
+    "scenario": "Server Error - Database Connection Failed",
+    "responseBody": "[{\"_id\":\"invalid\",\"name\":12345,\"code\":false,\"collegeId\":\"incomplete-id\"},{\"_id\":\"$%^&*\",\"name\":\"@#$%\",\"code\":\"!@#$\",\"collegeId\":\"not-a-valid-id\"}]"
+  }
+]

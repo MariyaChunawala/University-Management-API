@@ -1,0 +1,27 @@
+[
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Colleges",
+    "responseBody": "[{\"_id\":\"6123a4b5c6d7e8f9a0b1c2d3\",\"name\":\"Harvard University\",\"location\":\"Cambridge, Massachusetts\",\"established\":1636},{\"_id\":\"7234b5c6d7e8f9a0b1c2d4e5\",\"name\":\"Stanford University\",\"location\":\"Stanford, California\",\"established\":1885}]"
+  },
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Colleges",
+    "responseBody": "[{\"_id\":\"8345c6d7e8f9a0b1c2d3e4f5\",\"name\":\"MIT\",\"location\":\"Cambridge, Massachusetts\",\"established\":1861},{\"_id\":\"9456d7e8f9a0b1c2d3e4f5g6\",\"name\":\"Yale University\",\"location\":\"New Haven, Connecticut\",\"established\":1701}]"
+  },
+  {
+    "statusCode": 200,
+    "scenario": "Success - List of Colleges",
+    "responseBody": "[{\"_id\":\"a567e8f9a0b1c2d3e4f5g6h7\",\"name\":\"Princeton University\",\"location\":\"Princeton, New Jersey\",\"established\":1746},{\"_id\":\"b678f9a0b1c2d3e4f5g6h7i8\",\"name\":\"Columbia University\",\"location\":\"New York City, New York\",\"established\":1754}]"
+  },
+  {
+    "statusCode": 404,
+    "scenario": "Not Found",
+    "responseBody": "[]"
+  },
+  {
+    "statusCode": 500,
+    "scenario": "Internal Server Error",
+    "responseBody": "{\"error\":\"Database connection failed\",\"message\":\"Unable to retrieve college data\"}"
+  }
+]
