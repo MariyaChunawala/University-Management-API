@@ -1,0 +1,37 @@
+[
+  {
+    "newCollege.name_*string": "Harvard University",
+    "newCollege.location_*string": "Cambridge, Massachusetts",
+    "newCollege.established_*number": 1636,
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  },
+  {
+    "newCollege.name_*string": "Stanford University",
+    "newCollege.location_*string": "Stanford, California",
+    "newCollege.established_*number": 1885,
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  },
+  {
+    "newCollege.name_*string": "Massachusetts Institute of Technology",
+    "newCollege.location_*string": "Cambridge, Massachusetts",
+    "newCollege.established_*number": 1861,
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  },
+  {
+    "newCollege.name_*string": "University of Oxford",
+    "newCollege.location_*string": "Oxford, United Kingdom",
+    "newCollege.established_*number": 1096,
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  },
+  {
+    "newCollege.name_*string": "California Institute of Technology",
+    "newCollege.location_*string": "Pasadena, California",
+    "newCollege.established_*number": 1891,
+    "statusCode": 200,
+    "scenario": "Success - College Added"
+  }
+]
