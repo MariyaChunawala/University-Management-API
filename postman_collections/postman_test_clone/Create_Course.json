@@ -1,0 +1,37 @@
+[
+  {
+    "name_*string": "Computer Science",
+    "code_*string": "CS101",
+    "collegeId_*number": 5001,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  },
+  {
+    "name_*string": "Electrical Engineering",
+    "code_*string": "EE202",
+    "collegeId_*number": 5002,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  },
+  {
+    "name_*string": "Business Administration",
+    "code_*string": "BA305",
+    "collegeId_*number": 5003,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  },
+  {
+    "name_*string": "Psychology",
+    "code_*string": "PSY110",
+    "collegeId_*number": 5004,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  },
+  {
+    "name_*string": "Mechanical Engineering",
+    "code_*string": "ME404",
+    "collegeId_*number": 5005,
+    "statusCode": 200,
+    "scenario": "Success - Course Created"
+  }
+]
